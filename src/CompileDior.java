@@ -129,17 +129,16 @@ public class CompileDior extends diorBaseListener {
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void enterPrint(diorParser.PrintContext ctx) { }
+    @Override public void enterPrintOut(diorParser.PrintOutContext ctx) { }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void exitPrint(diorParser.PrintContext ctx) {
+    @Override public void exitPrintOut(diorParser.PrintOutContext ctx) {
         System.out.println("print " + ctx.ID().getText());
         this.out.append("print " + ctx.ID().getText() + "\n");
     }
-
     /**
      * {@inheritDoc}
      *
