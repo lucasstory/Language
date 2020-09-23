@@ -1,0 +1,7 @@
+var x;
+var y;
+
+x = 37;
+y = x + 5 + 4;
+
+print y;
