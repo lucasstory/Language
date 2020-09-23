@@ -1,0 +1,10 @@
+var x;
+var y;
+var z;
+
+x = 0;
+y = 10;
+z = 0;
+
+for (z FROM x TO y)
+    print z;

@@ -124,6 +124,27 @@ public class CompileDior extends diorBaseListener {
         System.out.println("push " + value);
         this.out.append("push " + value + "\n");
     }
+
+    @Override
+    public void enterForStatement(diorParser.ForStatementContext ctx) {
+        System.out.println("label enterFor");
+    }
+
+    @Override
+    public void exitForStatement(diorParser.ForStatementContext ctx) {
+        System.out.println("goto enterFor");
+    }
+
+    @Override
+    public void enterForConditions(diorParser.ForConditionsContext ctx) {
+
+    }
+
+    @Override
+    public void exitForConditions(diorParser.ForConditionsContext ctx) {
+
+    }
+
     /**
      * {@inheritDoc}
      *
