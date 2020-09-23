@@ -1,4 +1,4 @@
-// Generated from C:/Users/lelia/OneDrive/Dokument/GitHub/Language/src/grammar\dior.g4 by ANTLR 4.8
+// Generated from C:/Users/vikto/Documents/GitHub/Language/src/grammar\dior.g4 by ANTLR 4.8
 package grammar;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -28,6 +28,16 @@ public interface diorListener extends ParseTreeListener {
 	 */
 	void exitCode(diorParser.CodeContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link diorParser#block}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlock(diorParser.BlockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link diorParser#block}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlock(diorParser.BlockContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link diorParser#statement}.
 	 * @param ctx the parse tree
 	 */
@@ -47,6 +57,46 @@ public interface diorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitDeclaration(diorParser.DeclarationContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link diorParser#whileStatment}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhileStatment(diorParser.WhileStatmentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link diorParser#whileStatment}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhileStatment(diorParser.WhileStatmentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link diorParser#forStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterForStatement(diorParser.ForStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link diorParser#forStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitForStatement(diorParser.ForStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link diorParser#forConditions}.
+	 * @param ctx the parse tree
+	 */
+	void enterForConditions(diorParser.ForConditionsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link diorParser#forConditions}.
+	 * @param ctx the parse tree
+	 */
+	void exitForConditions(diorParser.ForConditionsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link diorParser#varRef}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarRef(diorParser.VarRefContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link diorParser#varRef}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarRef(diorParser.VarRefContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link diorParser#assignment}.
 	 * @param ctx the parse tree
@@ -78,6 +128,16 @@ public interface diorListener extends ParseTreeListener {
 	 */
 	void exitAddExpression(diorParser.AddExpressionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link diorParser#compareExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterCompareExpression(diorParser.CompareExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link diorParser#compareExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitCompareExpression(diorParser.CompareExpressionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link diorParser#unaryExpression}.
 	 * @param ctx the parse tree
 	 */
@@ -88,13 +148,23 @@ public interface diorListener extends ParseTreeListener {
 	 */
 	void exitUnaryExpression(diorParser.UnaryExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link diorParser#print}.
+	 * Enter a parse tree produced by {@link diorParser#printOut}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrint(diorParser.PrintContext ctx);
+	void enterPrintOut(diorParser.PrintOutContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link diorParser#print}.
+	 * Exit a parse tree produced by {@link diorParser#printOut}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrint(diorParser.PrintContext ctx);
+	void exitPrintOut(diorParser.PrintOutContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link diorParser#maths}.
+	 * @param ctx the parse tree
+	 */
+	void enterMaths(diorParser.MathsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link diorParser#maths}.
+	 * @param ctx the parse tree
+	 */
+	void exitMaths(diorParser.MathsContext ctx);
 }

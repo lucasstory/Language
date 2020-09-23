@@ -10,28 +10,57 @@ code
 | statement ';'
 ;
 
+block
+: '{' statement* '}'
+;
+
 statement
-: declaration
+: block
+| declaration
+| forStatement
+| whileStatment
 | assignment
-| print
+| printOut
 ;
 
 declaration
 : 'var' ID
 ;
 
+whileStatment
+: 'while' '(' expression ')'
+    statement*
+;
+
+forStatement
+: 'for' '(' forConditions ')'
+    statement*
+;
+
+forConditions
+: iterator=varRef 'FROM' startExpr=expression range='TO' endExpr=expression
+;
+
+varRef
+: ID
+;
+
 assignment
-: ID '=' expression
+: ID EQUALS expression
 ;
 
 expression
-: ID
-| INT
+: unaryExpression
 | addExpression
+| compareExpression
 ;
 
 addExpression
 : unaryExpression '+' expression
+;
+
+compareExpression
+: unaryExpression maths expression
 ;
 
 unaryExpression
@@ -39,10 +68,30 @@ unaryExpression
 | INT
 ;
 
-print
+printOut
 : 'print' ID
 ;
 
-ID: ('a'..'z')+;
-INT: ('0'..'9')+;
-WS: [ \n\t\r]+ -> skip;
+maths
+: GREATER
+| LESS
+| EQUALS
+;
+
+ID : [a-zA-Z0-9]+ ;
+
+INT: ('0'..'9')+ ;
+
+WS:	[ \n\t\r]+ -> skip ;
+
+GREATER
+: '>'
+;
+
+LESS
+: '<'
+;
+
+EQUALS
+: '='
+;
