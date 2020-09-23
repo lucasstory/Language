@@ -7,7 +7,6 @@ public class CompileDior extends diorBaseListener {
     private static StringBuilder out = new StringBuilder();
 
     String getCompilerCode() {
-        System.out.println(out.toString());
         return out.toString();
     }
 
@@ -59,8 +58,29 @@ public class CompileDior extends diorBaseListener {
      * <p>The default implementation does nothing.</p>
      */
     @Override public void exitDeclaration(diorParser.DeclarationContext ctx) {
-       // System.out.println("push " + ctx.ID().getText() + "\n");
     }
+
+    @Override
+    public void enterForStatement(diorParser.ForStatementContext ctx) {
+        out.append("label enterFor \n");
+        System.out.println("label enterFor");
+    }
+
+    @Override
+    public void exitForStatement(diorParser.ForStatementContext ctx) {
+        System.out.println("label exitFor " + ctx.statement().getText());
+    }
+
+    @Override
+    public void enterForConditions(diorParser.ForConditionsContext ctx) {
+        System.out.println("Enter cond " + ctx.getText());
+    }
+
+    @Override
+    public void exitForConditions(diorParser.ForConditionsContext ctx) {
+        System.out.println("exit cond" + ctx.getText());
+    }
+
     /**
      * {@inheritDoc}
      *

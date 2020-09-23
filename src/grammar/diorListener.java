@@ -58,6 +58,46 @@ public interface diorListener extends ParseTreeListener {
 	 */
 	void exitAssignment(diorParser.AssignmentContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link diorParser#ifStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIfStatement(diorParser.IfStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link diorParser#ifStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIfStatement(diorParser.IfStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link diorParser#whileStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhileStatement(diorParser.WhileStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link diorParser#whileStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhileStatement(diorParser.WhileStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link diorParser#forStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterForStatement(diorParser.ForStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link diorParser#forStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitForStatement(diorParser.ForStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link diorParser#forConditions}.
+	 * @param ctx the parse tree
+	 */
+	void enterForConditions(diorParser.ForConditionsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link diorParser#forConditions}.
+	 * @param ctx the parse tree
+	 */
+	void exitForConditions(diorParser.ForConditionsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link diorParser#expression}.
 	 * @param ctx the parse tree
 	 */

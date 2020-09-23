@@ -41,6 +41,30 @@ public interface diorVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssignment(diorParser.AssignmentContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link diorParser#ifStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIfStatement(diorParser.IfStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link diorParser#whileStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhileStatement(diorParser.WhileStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link diorParser#forStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitForStatement(diorParser.ForStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link diorParser#forConditions}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitForConditions(diorParser.ForConditionsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link diorParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

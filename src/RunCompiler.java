@@ -14,7 +14,7 @@ public class RunCompiler {
         CompileDior compiler = new CompileDior();
 
         System.out.println("Vilket program vill du kompilera");
-        Scanner scanner = new Scanner("programs/add.dior");
+        Scanner scanner = new Scanner("programs/loop.dior");
         infile = scanner.nextLine();
 
         try {

@@ -13,6 +13,9 @@ code
 statement
 : declaration
 | assignment
+| ifStatement
+| whileStatement
+| forStatement
 | print
 ;
 
@@ -23,6 +26,20 @@ declaration
 assignment
 : ID '=' expression
 ;
+
+ifStatement
+: 'if' '(' statement ')' code
+| 'if' '(' statement ')'
+;
+
+whileStatement
+: 'while' '('statement')'
+;
+
+
+forStatement : 'for' ('(')? forConditions (')')? statement ;
+
+forConditions : iterator=unaryExpression  'from' startExpr=expression range='to' endExpr=expression ;
 
 expression
 : ID
