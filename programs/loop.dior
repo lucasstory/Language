@@ -1,10 +1,11 @@
-var x;
-var y;
-var z;
+var a;
+var b;
+a = 0;
+b = 0;
 
-x = 0;
-y = 10;
-z = 0;
+loop a < 10 continue
+b = b + a
+a = a + 1
+end loop;
 
-for (z FROM x TO y)
-    print z;
+print b;

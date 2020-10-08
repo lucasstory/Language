@@ -1,4 +1,4 @@
-// Generated from C:/Users/vikto/Documents/GitHub/Language/src/grammar\dior.g4 by ANTLR 4.8
+// Generated from C:/Users/Lucas/Documents/GitHub/Language/src/grammar\dior.g4 by ANTLR 4.8
 package grammar;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -18,35 +18,32 @@ public class diorParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, T__10=11, T__11=12, ID=13, INT=14, WS=15, GREATER=16, LESS=17, 
-		EQUALS=18;
+		T__9=10, T__10=11, ID=12, INT=13, WS=14, EQUALS=15;
 	public static final int
-		RULE_file = 0, RULE_code = 1, RULE_block = 2, RULE_statement = 3, RULE_declaration = 4, 
-		RULE_whileStatment = 5, RULE_forStatement = 6, RULE_forConditions = 7, 
-		RULE_varRef = 8, RULE_assignment = 9, RULE_expression = 10, RULE_addExpression = 11, 
-		RULE_compareExpression = 12, RULE_unaryExpression = 13, RULE_printOut = 14, 
-		RULE_maths = 15;
+		RULE_file = 0, RULE_code = 1, RULE_statement = 2, RULE_declaration = 3, 
+		RULE_loop = 4, RULE_headloop = 5, RULE_endloop = 6, RULE_assignment = 7, 
+		RULE_expression = 8, RULE_addExpression = 9, RULE_conditionalStatements = 10, 
+		RULE_unaryExpression = 11, RULE_printOut = 12;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"file", "code", "block", "statement", "declaration", "whileStatment", 
-			"forStatement", "forConditions", "varRef", "assignment", "expression", 
-			"addExpression", "compareExpression", "unaryExpression", "printOut", 
-			"maths"
+			"file", "code", "statement", "declaration", "loop", "headloop", "endloop", 
+			"assignment", "expression", "addExpression", "conditionalStatements", 
+			"unaryExpression", "printOut"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "';'", "'{'", "'}'", "'var'", "'while'", "'('", "')'", "'for'", 
-			"'FROM'", "'TO'", "'+'", "'print'", null, null, null, "'>'", "'<'", "'='"
+			null, "';'", "'var'", "'loop'", "'continue'", "'end loop'", "'+'", "'<'", 
+			"'>'", "'=>'", "'<='", "'print'", null, null, null, "'='"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, "ID", "INT", "WS", "GREATER", "LESS", "EQUALS"
+			"ID", "INT", "WS", "EQUALS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -128,25 +125,24 @@ public class diorParser extends Parser {
 		FileContext _localctx = new FileContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_file);
 		try {
-			setState(34);
+			setState(28);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__1:
-			case T__3:
-			case T__4:
-			case T__7:
-			case T__11:
+			case T__2:
+			case T__10:
 			case ID:
+			case INT:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(32);
+				setState(26);
 				code();
 				}
 				break;
 			case EOF:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(33);
+				setState(27);
 				match(EOF);
 				}
 				break;
@@ -195,93 +191,29 @@ public class diorParser extends Parser {
 		CodeContext _localctx = new CodeContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_code);
 		try {
-			setState(43);
+			setState(37);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(36);
+				setState(30);
 				statement();
-				setState(37);
+				setState(31);
 				match(T__0);
-				setState(38);
+				setState(32);
 				code();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(40);
+				setState(34);
 				statement();
-				setState(41);
+				setState(35);
 				match(T__0);
 				}
 				break;
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class BlockContext extends ParserRuleContext {
-		public List<StatementContext> statement() {
-			return getRuleContexts(StatementContext.class);
-		}
-		public StatementContext statement(int i) {
-			return getRuleContext(StatementContext.class,i);
-		}
-		public BlockContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_block; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).enterBlock(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).exitBlock(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof diorVisitor ) return ((diorVisitor<? extends T>)visitor).visitBlock(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final BlockContext block() throws RecognitionException {
-		BlockContext _localctx = new BlockContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_block);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(45);
-			match(T__1);
-			setState(49);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__3) | (1L << T__4) | (1L << T__7) | (1L << T__11) | (1L << ID))) != 0)) {
-				{
-				{
-				setState(46);
-				statement();
-				}
-				}
-				setState(51);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(52);
-			match(T__2);
 			}
 		}
 		catch (RecognitionException re) {
@@ -296,23 +228,23 @@ public class diorParser extends Parser {
 	}
 
 	public static class StatementContext extends ParserRuleContext {
-		public BlockContext block() {
-			return getRuleContext(BlockContext.class,0);
-		}
 		public DeclarationContext declaration() {
 			return getRuleContext(DeclarationContext.class,0);
 		}
-		public ForStatementContext forStatement() {
-			return getRuleContext(ForStatementContext.class,0);
-		}
-		public WhileStatmentContext whileStatment() {
-			return getRuleContext(WhileStatmentContext.class,0);
+		public LoopContext loop() {
+			return getRuleContext(LoopContext.class,0);
 		}
 		public AssignmentContext assignment() {
 			return getRuleContext(AssignmentContext.class,0);
 		}
 		public PrintOutContext printOut() {
 			return getRuleContext(PrintOutContext.class,0);
+		}
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public ConditionalStatementsContext conditionalStatements() {
+			return getRuleContext(ConditionalStatementsContext.class,0);
 		}
 		public StatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -335,55 +267,53 @@ public class diorParser extends Parser {
 
 	public final StatementContext statement() throws RecognitionException {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_statement);
+		enterRule(_localctx, 4, RULE_statement);
 		try {
-			setState(60);
+			setState(45);
 			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case T__1:
+			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
+			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(54);
-				block();
-				}
-				break;
-			case T__3:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(55);
+				setState(39);
 				declaration();
 				}
 				break;
-			case T__7:
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(40);
+				loop();
+				}
+				break;
+			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(56);
-				forStatement();
-				}
-				break;
-			case T__4:
-				enterOuterAlt(_localctx, 4);
-				{
-				setState(57);
-				whileStatment();
-				}
-				break;
-			case ID:
-				enterOuterAlt(_localctx, 5);
-				{
-				setState(58);
+				setState(41);
 				assignment();
 				}
 				break;
-			case T__11:
-				enterOuterAlt(_localctx, 6);
+			case 4:
+				enterOuterAlt(_localctx, 4);
 				{
-				setState(59);
+				setState(42);
 				printOut();
 				}
 				break;
-			default:
-				throw new NoViableAltException(this);
+			case 5:
+				enterOuterAlt(_localctx, 5);
+				{
+				setState(43);
+				expression();
+				}
+				break;
+			case 6:
+				enterOuterAlt(_localctx, 6);
+				{
+				setState(44);
+				conditionalStatements();
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -420,264 +350,173 @@ public class diorParser extends Parser {
 
 	public final DeclarationContext declaration() throws RecognitionException {
 		DeclarationContext _localctx = new DeclarationContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_declaration);
+		enterRule(_localctx, 6, RULE_declaration);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(47);
+			match(T__1);
+			setState(48);
+			match(ID);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class LoopContext extends ParserRuleContext {
+		public HeadloopContext headloop() {
+			return getRuleContext(HeadloopContext.class,0);
+		}
+		public EndloopContext endloop() {
+			return getRuleContext(EndloopContext.class,0);
+		}
+		public List<StatementContext> statement() {
+			return getRuleContexts(StatementContext.class);
+		}
+		public StatementContext statement(int i) {
+			return getRuleContext(StatementContext.class,i);
+		}
+		public LoopContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_loop; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof diorListener ) ((diorListener)listener).enterLoop(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof diorListener ) ((diorListener)listener).exitLoop(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof diorVisitor ) return ((diorVisitor<? extends T>)visitor).visitLoop(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final LoopContext loop() throws RecognitionException {
+		LoopContext _localctx = new LoopContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_loop);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(50);
+			headloop();
+			setState(52); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(51);
+				statement();
+				}
+				}
+				setState(54); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__2) | (1L << T__10) | (1L << ID) | (1L << INT))) != 0) );
+			setState(56);
+			endloop();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class HeadloopContext extends ParserRuleContext {
+		public ConditionalStatementsContext conditionalStatements() {
+			return getRuleContext(ConditionalStatementsContext.class,0);
+		}
+		public HeadloopContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_headloop; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof diorListener ) ((diorListener)listener).enterHeadloop(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof diorListener ) ((diorListener)listener).exitHeadloop(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof diorVisitor ) return ((diorVisitor<? extends T>)visitor).visitHeadloop(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final HeadloopContext headloop() throws RecognitionException {
+		HeadloopContext _localctx = new HeadloopContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_headloop);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(58);
+			match(T__2);
+			setState(59);
+			conditionalStatements();
+			setState(60);
+			match(T__3);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class EndloopContext extends ParserRuleContext {
+		public EndloopContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_endloop; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof diorListener ) ((diorListener)listener).enterEndloop(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof diorListener ) ((diorListener)listener).exitEndloop(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof diorVisitor ) return ((diorVisitor<? extends T>)visitor).visitEndloop(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final EndloopContext endloop() throws RecognitionException {
+		EndloopContext _localctx = new EndloopContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_endloop);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(62);
-			match(T__3);
-			setState(63);
-			match(ID);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class WhileStatmentContext extends ParserRuleContext {
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public List<StatementContext> statement() {
-			return getRuleContexts(StatementContext.class);
-		}
-		public StatementContext statement(int i) {
-			return getRuleContext(StatementContext.class,i);
-		}
-		public WhileStatmentContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_whileStatment; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).enterWhileStatment(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).exitWhileStatment(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof diorVisitor ) return ((diorVisitor<? extends T>)visitor).visitWhileStatment(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final WhileStatmentContext whileStatment() throws RecognitionException {
-		WhileStatmentContext _localctx = new WhileStatmentContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_whileStatment);
-		try {
-			int _alt;
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(65);
 			match(T__4);
-			setState(66);
-			match(T__5);
-			setState(67);
-			expression();
-			setState(68);
-			match(T__6);
-			setState(72);
-			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
-				if ( _alt==1 ) {
-					{
-					{
-					setState(69);
-					statement();
-					}
-					} 
-				}
-				setState(74);
-				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ForStatementContext extends ParserRuleContext {
-		public ForConditionsContext forConditions() {
-			return getRuleContext(ForConditionsContext.class,0);
-		}
-		public List<StatementContext> statement() {
-			return getRuleContexts(StatementContext.class);
-		}
-		public StatementContext statement(int i) {
-			return getRuleContext(StatementContext.class,i);
-		}
-		public ForStatementContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_forStatement; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).enterForStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).exitForStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof diorVisitor ) return ((diorVisitor<? extends T>)visitor).visitForStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final ForStatementContext forStatement() throws RecognitionException {
-		ForStatementContext _localctx = new ForStatementContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_forStatement);
-		try {
-			int _alt;
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(75);
-			match(T__7);
-			setState(76);
-			match(T__5);
-			setState(77);
-			forConditions();
-			setState(78);
-			match(T__6);
-			setState(82);
-			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
-				if ( _alt==1 ) {
-					{
-					{
-					setState(79);
-					statement();
-					}
-					} 
-				}
-				setState(84);
-				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ForConditionsContext extends ParserRuleContext {
-		public VarRefContext iterator;
-		public ExpressionContext startExpr;
-		public Token range;
-		public ExpressionContext endExpr;
-		public VarRefContext varRef() {
-			return getRuleContext(VarRefContext.class,0);
-		}
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public ForConditionsContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_forConditions; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).enterForConditions(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).exitForConditions(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof diorVisitor ) return ((diorVisitor<? extends T>)visitor).visitForConditions(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final ForConditionsContext forConditions() throws RecognitionException {
-		ForConditionsContext _localctx = new ForConditionsContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_forConditions);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(85);
-			((ForConditionsContext)_localctx).iterator = varRef();
-			setState(86);
-			match(T__8);
-			setState(87);
-			((ForConditionsContext)_localctx).startExpr = expression();
-			setState(88);
-			((ForConditionsContext)_localctx).range = match(T__9);
-			setState(89);
-			((ForConditionsContext)_localctx).endExpr = expression();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class VarRefContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(diorParser.ID, 0); }
-		public VarRefContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_varRef; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).enterVarRef(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).exitVarRef(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof diorVisitor ) return ((diorVisitor<? extends T>)visitor).visitVarRef(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final VarRefContext varRef() throws RecognitionException {
-		VarRefContext _localctx = new VarRefContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_varRef);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(91);
-			match(ID);
 			}
 		}
 		catch (RecognitionException re) {
@@ -718,15 +557,15 @@ public class diorParser extends Parser {
 
 	public final AssignmentContext assignment() throws RecognitionException {
 		AssignmentContext _localctx = new AssignmentContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_assignment);
+		enterRule(_localctx, 14, RULE_assignment);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(93);
+			setState(64);
 			match(ID);
-			setState(94);
+			setState(65);
 			match(EQUALS);
-			setState(95);
+			setState(66);
 			expression();
 			}
 		}
@@ -747,9 +586,6 @@ public class diorParser extends Parser {
 		}
 		public AddExpressionContext addExpression() {
 			return getRuleContext(AddExpressionContext.class,0);
-		}
-		public CompareExpressionContext compareExpression() {
-			return getRuleContext(CompareExpressionContext.class,0);
 		}
 		public ExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -772,30 +608,23 @@ public class diorParser extends Parser {
 
 	public final ExpressionContext expression() throws RecognitionException {
 		ExpressionContext _localctx = new ExpressionContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_expression);
+		enterRule(_localctx, 16, RULE_expression);
 		try {
-			setState(100);
+			setState(70);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(97);
+				setState(68);
 				unaryExpression();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(98);
+				setState(69);
 				addExpression();
-				}
-				break;
-			case 3:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(99);
-				compareExpression();
 				}
 				break;
 			}
@@ -839,15 +668,15 @@ public class diorParser extends Parser {
 
 	public final AddExpressionContext addExpression() throws RecognitionException {
 		AddExpressionContext _localctx = new AddExpressionContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_addExpression);
+		enterRule(_localctx, 18, RULE_addExpression);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(102);
+			setState(72);
 			unaryExpression();
-			setState(103);
-			match(T__10);
-			setState(104);
+			setState(73);
+			match(T__5);
+			setState(74);
 			expression();
 			}
 		}
@@ -862,47 +691,83 @@ public class diorParser extends Parser {
 		return _localctx;
 	}
 
-	public static class CompareExpressionContext extends ParserRuleContext {
-		public UnaryExpressionContext unaryExpression() {
-			return getRuleContext(UnaryExpressionContext.class,0);
+	public static class ConditionalStatementsContext extends ParserRuleContext {
+		public List<UnaryExpressionContext> unaryExpression() {
+			return getRuleContexts(UnaryExpressionContext.class);
 		}
-		public MathsContext maths() {
-			return getRuleContext(MathsContext.class,0);
+		public UnaryExpressionContext unaryExpression(int i) {
+			return getRuleContext(UnaryExpressionContext.class,i);
 		}
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public CompareExpressionContext(ParserRuleContext parent, int invokingState) {
+		public ConditionalStatementsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_compareExpression; }
+		@Override public int getRuleIndex() { return RULE_conditionalStatements; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).enterCompareExpression(this);
+			if ( listener instanceof diorListener ) ((diorListener)listener).enterConditionalStatements(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).exitCompareExpression(this);
+			if ( listener instanceof diorListener ) ((diorListener)listener).exitConditionalStatements(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof diorVisitor ) return ((diorVisitor<? extends T>)visitor).visitCompareExpression(this);
+			if ( visitor instanceof diorVisitor ) return ((diorVisitor<? extends T>)visitor).visitConditionalStatements(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final CompareExpressionContext compareExpression() throws RecognitionException {
-		CompareExpressionContext _localctx = new CompareExpressionContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_compareExpression);
+	public final ConditionalStatementsContext conditionalStatements() throws RecognitionException {
+		ConditionalStatementsContext _localctx = new ConditionalStatementsContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_conditionalStatements);
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(106);
-			unaryExpression();
-			setState(107);
-			maths();
-			setState(108);
-			expression();
+			setState(92);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(76);
+				unaryExpression();
+				setState(77);
+				match(T__6);
+				setState(78);
+				unaryExpression();
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(80);
+				unaryExpression();
+				setState(81);
+				match(T__7);
+				setState(82);
+				unaryExpression();
+				}
+				break;
+			case 3:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(84);
+				unaryExpression();
+				setState(85);
+				match(T__8);
+				setState(86);
+				unaryExpression();
+				}
+				break;
+			case 4:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(88);
+				unaryExpression();
+				setState(89);
+				match(T__9);
+				setState(90);
+				unaryExpression();
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -940,12 +805,12 @@ public class diorParser extends Parser {
 
 	public final UnaryExpressionContext unaryExpression() throws RecognitionException {
 		UnaryExpressionContext _localctx = new UnaryExpressionContext(_ctx, getState());
-		enterRule(_localctx, 26, RULE_unaryExpression);
+		enterRule(_localctx, 22, RULE_unaryExpression);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(110);
+			setState(94);
 			_la = _input.LA(1);
 			if ( !(_la==ID || _la==INT) ) {
 			_errHandler.recoverInline(this);
@@ -991,13 +856,13 @@ public class diorParser extends Parser {
 
 	public final PrintOutContext printOut() throws RecognitionException {
 		PrintOutContext _localctx = new PrintOutContext(_ctx, getState());
-		enterRule(_localctx, 28, RULE_printOut);
+		enterRule(_localctx, 24, RULE_printOut);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(112);
-			match(T__11);
-			setState(113);
+			setState(96);
+			match(T__10);
+			setState(97);
 			match(ID);
 			}
 		}
@@ -1012,88 +877,31 @@ public class diorParser extends Parser {
 		return _localctx;
 	}
 
-	public static class MathsContext extends ParserRuleContext {
-		public TerminalNode GREATER() { return getToken(diorParser.GREATER, 0); }
-		public TerminalNode LESS() { return getToken(diorParser.LESS, 0); }
-		public TerminalNode EQUALS() { return getToken(diorParser.EQUALS, 0); }
-		public MathsContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_maths; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).enterMaths(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof diorListener ) ((diorListener)listener).exitMaths(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof diorVisitor ) return ((diorVisitor<? extends T>)visitor).visitMaths(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final MathsContext maths() throws RecognitionException {
-		MathsContext _localctx = new MathsContext(_ctx, getState());
-		enterRule(_localctx, 30, RULE_maths);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(115);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << GREATER) | (1L << LESS) | (1L << EQUALS))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\24x\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21f\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
-		"\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\3\2\3\2\5\2%\n"+
-		"\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3.\n\3\3\4\3\4\7\4\62\n\4\f\4\16\4\65"+
-		"\13\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\5\5?\n\5\3\6\3\6\3\6\3\7\3\7\3\7"+
-		"\3\7\3\7\7\7I\n\7\f\7\16\7L\13\7\3\b\3\b\3\b\3\b\3\b\7\bS\n\b\f\b\16\b"+
-		"V\13\b\3\t\3\t\3\t\3\t\3\t\3\t\3\n\3\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f"+
-		"\5\fg\n\f\3\r\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\17\3\17\3\20\3\20\3\20"+
-		"\3\21\3\21\3\21\2\2\22\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \2\4\3\2"+
-		"\17\20\3\2\22\24\2s\2$\3\2\2\2\4-\3\2\2\2\6/\3\2\2\2\b>\3\2\2\2\n@\3\2"+
-		"\2\2\fC\3\2\2\2\16M\3\2\2\2\20W\3\2\2\2\22]\3\2\2\2\24_\3\2\2\2\26f\3"+
-		"\2\2\2\30h\3\2\2\2\32l\3\2\2\2\34p\3\2\2\2\36r\3\2\2\2 u\3\2\2\2\"%\5"+
-		"\4\3\2#%\7\2\2\3$\"\3\2\2\2$#\3\2\2\2%\3\3\2\2\2&\'\5\b\5\2\'(\7\3\2\2"+
-		"()\5\4\3\2).\3\2\2\2*+\5\b\5\2+,\7\3\2\2,.\3\2\2\2-&\3\2\2\2-*\3\2\2\2"+
-		".\5\3\2\2\2/\63\7\4\2\2\60\62\5\b\5\2\61\60\3\2\2\2\62\65\3\2\2\2\63\61"+
-		"\3\2\2\2\63\64\3\2\2\2\64\66\3\2\2\2\65\63\3\2\2\2\66\67\7\5\2\2\67\7"+
-		"\3\2\2\28?\5\6\4\29?\5\n\6\2:?\5\16\b\2;?\5\f\7\2<?\5\24\13\2=?\5\36\20"+
-		"\2>8\3\2\2\2>9\3\2\2\2>:\3\2\2\2>;\3\2\2\2><\3\2\2\2>=\3\2\2\2?\t\3\2"+
-		"\2\2@A\7\6\2\2AB\7\17\2\2B\13\3\2\2\2CD\7\7\2\2DE\7\b\2\2EF\5\26\f\2F"+
-		"J\7\t\2\2GI\5\b\5\2HG\3\2\2\2IL\3\2\2\2JH\3\2\2\2JK\3\2\2\2K\r\3\2\2\2"+
-		"LJ\3\2\2\2MN\7\n\2\2NO\7\b\2\2OP\5\20\t\2PT\7\t\2\2QS\5\b\5\2RQ\3\2\2"+
-		"\2SV\3\2\2\2TR\3\2\2\2TU\3\2\2\2U\17\3\2\2\2VT\3\2\2\2WX\5\22\n\2XY\7"+
-		"\13\2\2YZ\5\26\f\2Z[\7\f\2\2[\\\5\26\f\2\\\21\3\2\2\2]^\7\17\2\2^\23\3"+
-		"\2\2\2_`\7\17\2\2`a\7\24\2\2ab\5\26\f\2b\25\3\2\2\2cg\5\34\17\2dg\5\30"+
-		"\r\2eg\5\32\16\2fc\3\2\2\2fd\3\2\2\2fe\3\2\2\2g\27\3\2\2\2hi\5\34\17\2"+
-		"ij\7\r\2\2jk\5\26\f\2k\31\3\2\2\2lm\5\34\17\2mn\5 \21\2no\5\26\f\2o\33"+
-		"\3\2\2\2pq\t\2\2\2q\35\3\2\2\2rs\7\16\2\2st\7\17\2\2t\37\3\2\2\2uv\t\3"+
-		"\2\2v!\3\2\2\2\t$-\63>JTf";
+		"\f\t\f\4\r\t\r\4\16\t\16\3\2\3\2\5\2\37\n\2\3\3\3\3\3\3\3\3\3\3\3\3\3"+
+		"\3\5\3(\n\3\3\4\3\4\3\4\3\4\3\4\3\4\5\4\60\n\4\3\5\3\5\3\5\3\6\3\6\6\6"+
+		"\67\n\6\r\6\16\68\3\6\3\6\3\7\3\7\3\7\3\7\3\b\3\b\3\t\3\t\3\t\3\t\3\n"+
+		"\3\n\5\nI\n\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f"+
+		"\3\f\3\f\3\f\3\f\3\f\3\f\3\f\5\f_\n\f\3\r\3\r\3\16\3\16\3\16\3\16\2\2"+
+		"\17\2\4\6\b\n\f\16\20\22\24\26\30\32\2\3\3\2\16\17\2d\2\36\3\2\2\2\4\'"+
+		"\3\2\2\2\6/\3\2\2\2\b\61\3\2\2\2\n\64\3\2\2\2\f<\3\2\2\2\16@\3\2\2\2\20"+
+		"B\3\2\2\2\22H\3\2\2\2\24J\3\2\2\2\26^\3\2\2\2\30`\3\2\2\2\32b\3\2\2\2"+
+		"\34\37\5\4\3\2\35\37\7\2\2\3\36\34\3\2\2\2\36\35\3\2\2\2\37\3\3\2\2\2"+
+		" !\5\6\4\2!\"\7\3\2\2\"#\5\4\3\2#(\3\2\2\2$%\5\6\4\2%&\7\3\2\2&(\3\2\2"+
+		"\2\' \3\2\2\2\'$\3\2\2\2(\5\3\2\2\2)\60\5\b\5\2*\60\5\n\6\2+\60\5\20\t"+
+		"\2,\60\5\32\16\2-\60\5\22\n\2.\60\5\26\f\2/)\3\2\2\2/*\3\2\2\2/+\3\2\2"+
+		"\2/,\3\2\2\2/-\3\2\2\2/.\3\2\2\2\60\7\3\2\2\2\61\62\7\4\2\2\62\63\7\16"+
+		"\2\2\63\t\3\2\2\2\64\66\5\f\7\2\65\67\5\6\4\2\66\65\3\2\2\2\678\3\2\2"+
+		"\28\66\3\2\2\289\3\2\2\29:\3\2\2\2:;\5\16\b\2;\13\3\2\2\2<=\7\5\2\2=>"+
+		"\5\26\f\2>?\7\6\2\2?\r\3\2\2\2@A\7\7\2\2A\17\3\2\2\2BC\7\16\2\2CD\7\21"+
+		"\2\2DE\5\22\n\2E\21\3\2\2\2FI\5\30\r\2GI\5\24\13\2HF\3\2\2\2HG\3\2\2\2"+
+		"I\23\3\2\2\2JK\5\30\r\2KL\7\b\2\2LM\5\22\n\2M\25\3\2\2\2NO\5\30\r\2OP"+
+		"\7\t\2\2PQ\5\30\r\2Q_\3\2\2\2RS\5\30\r\2ST\7\n\2\2TU\5\30\r\2U_\3\2\2"+
+		"\2VW\5\30\r\2WX\7\13\2\2XY\5\30\r\2Y_\3\2\2\2Z[\5\30\r\2[\\\7\f\2\2\\"+
+		"]\5\30\r\2]_\3\2\2\2^N\3\2\2\2^R\3\2\2\2^V\3\2\2\2^Z\3\2\2\2_\27\3\2\2"+
+		"\2`a\t\2\2\2a\31\3\2\2\2bc\7\r\2\2cd\7\16\2\2d\33\3\2\2\2\b\36\'/8H^";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

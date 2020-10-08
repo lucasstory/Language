@@ -1,4 +1,4 @@
-// Generated from C:/Users/vikto/Documents/GitHub/Language/src/grammar\dior.g4 by ANTLR 4.8
+// Generated from C:/Users/Lucas/Documents/GitHub/Language/src/grammar\dior.g4 by ANTLR 4.8
 package grammar;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -23,12 +23,6 @@ public interface diorVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCode(diorParser.CodeContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link diorParser#block}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBlock(diorParser.BlockContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link diorParser#statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -41,29 +35,23 @@ public interface diorVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDeclaration(diorParser.DeclarationContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link diorParser#whileStatment}.
+	 * Visit a parse tree produced by {@link diorParser#loop}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitWhileStatment(diorParser.WhileStatmentContext ctx);
+	T visitLoop(diorParser.LoopContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link diorParser#forStatement}.
+	 * Visit a parse tree produced by {@link diorParser#headloop}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitForStatement(diorParser.ForStatementContext ctx);
+	T visitHeadloop(diorParser.HeadloopContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link diorParser#forConditions}.
+	 * Visit a parse tree produced by {@link diorParser#endloop}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitForConditions(diorParser.ForConditionsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link diorParser#varRef}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVarRef(diorParser.VarRefContext ctx);
+	T visitEndloop(diorParser.EndloopContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link diorParser#assignment}.
 	 * @param ctx the parse tree
@@ -83,11 +71,11 @@ public interface diorVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAddExpression(diorParser.AddExpressionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link diorParser#compareExpression}.
+	 * Visit a parse tree produced by {@link diorParser#conditionalStatements}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCompareExpression(diorParser.CompareExpressionContext ctx);
+	T visitConditionalStatements(diorParser.ConditionalStatementsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link diorParser#unaryExpression}.
 	 * @param ctx the parse tree
@@ -100,10 +88,4 @@ public interface diorVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitPrintOut(diorParser.PrintOutContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link diorParser#maths}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMaths(diorParser.MathsContext ctx);
 }

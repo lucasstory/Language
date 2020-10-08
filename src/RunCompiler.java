@@ -11,7 +11,7 @@ public class RunCompiler {
     public static void main(String[] args) {
         String infile;
         String outfile;
-        CompileDior compiler = new CompileDior();
+        DiorCompiler compiler = new DiorCompiler();
 
         System.out.println("Vilket program vill du kompilera");
         Scanner scanner = new Scanner("programs/loop.dior");
@@ -26,7 +26,7 @@ public class RunCompiler {
             ParseTree tree = parser.file();
 
             ParseTreeWalker walker = new ParseTreeWalker();
-            walker.walk(new CompileDior(), tree);
+            walker.walk(new DiorCompiler(), tree);
 
             System.out.println("Vad ska den kompilerade filen heta?");
             scanner = new Scanner(System.in);

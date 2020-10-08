@@ -1,4 +1,4 @@
-// Generated from C:/Users/vikto/Documents/GitHub/Language/src/grammar\dior.g4 by ANTLR 4.8
+// Generated from C:/Users/Lucas/Documents/GitHub/Language/src/grammar\dior.g4 by ANTLR 4.8
 package grammar;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -40,18 +40,6 @@ public class diorBaseListener implements diorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlock(diorParser.BlockContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitBlock(diorParser.BlockContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterStatement(diorParser.StatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -76,49 +64,37 @@ public class diorBaseListener implements diorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWhileStatment(diorParser.WhileStatmentContext ctx) { }
+	@Override public void enterLoop(diorParser.LoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWhileStatment(diorParser.WhileStatmentContext ctx) { }
+	@Override public void exitLoop(diorParser.LoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterForStatement(diorParser.ForStatementContext ctx) { }
+	@Override public void enterHeadloop(diorParser.HeadloopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitForStatement(diorParser.ForStatementContext ctx) { }
+	@Override public void exitHeadloop(diorParser.HeadloopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterForConditions(diorParser.ForConditionsContext ctx) { }
+	@Override public void enterEndloop(diorParser.EndloopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitForConditions(diorParser.ForConditionsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterVarRef(diorParser.VarRefContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitVarRef(diorParser.VarRefContext ctx) { }
+	@Override public void exitEndloop(diorParser.EndloopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -160,13 +136,13 @@ public class diorBaseListener implements diorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCompareExpression(diorParser.CompareExpressionContext ctx) { }
+	@Override public void enterConditionalStatements(diorParser.ConditionalStatementsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCompareExpression(diorParser.CompareExpressionContext ctx) { }
+	@Override public void exitConditionalStatements(diorParser.ConditionalStatementsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -191,18 +167,6 @@ public class diorBaseListener implements diorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitPrintOut(diorParser.PrintOutContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterMaths(diorParser.MathsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMaths(diorParser.MathsContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

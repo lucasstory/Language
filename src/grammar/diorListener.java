@@ -1,4 +1,4 @@
-// Generated from C:/Users/vikto/Documents/GitHub/Language/src/grammar\dior.g4 by ANTLR 4.8
+// Generated from C:/Users/Lucas/Documents/GitHub/Language/src/grammar\dior.g4 by ANTLR 4.8
 package grammar;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -28,16 +28,6 @@ public interface diorListener extends ParseTreeListener {
 	 */
 	void exitCode(diorParser.CodeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link diorParser#block}.
-	 * @param ctx the parse tree
-	 */
-	void enterBlock(diorParser.BlockContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link diorParser#block}.
-	 * @param ctx the parse tree
-	 */
-	void exitBlock(diorParser.BlockContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link diorParser#statement}.
 	 * @param ctx the parse tree
 	 */
@@ -58,45 +48,35 @@ public interface diorListener extends ParseTreeListener {
 	 */
 	void exitDeclaration(diorParser.DeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link diorParser#whileStatment}.
+	 * Enter a parse tree produced by {@link diorParser#loop}.
 	 * @param ctx the parse tree
 	 */
-	void enterWhileStatment(diorParser.WhileStatmentContext ctx);
+	void enterLoop(diorParser.LoopContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link diorParser#whileStatment}.
+	 * Exit a parse tree produced by {@link diorParser#loop}.
 	 * @param ctx the parse tree
 	 */
-	void exitWhileStatment(diorParser.WhileStatmentContext ctx);
+	void exitLoop(diorParser.LoopContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link diorParser#forStatement}.
+	 * Enter a parse tree produced by {@link diorParser#headloop}.
 	 * @param ctx the parse tree
 	 */
-	void enterForStatement(diorParser.ForStatementContext ctx);
+	void enterHeadloop(diorParser.HeadloopContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link diorParser#forStatement}.
+	 * Exit a parse tree produced by {@link diorParser#headloop}.
 	 * @param ctx the parse tree
 	 */
-	void exitForStatement(diorParser.ForStatementContext ctx);
+	void exitHeadloop(diorParser.HeadloopContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link diorParser#forConditions}.
+	 * Enter a parse tree produced by {@link diorParser#endloop}.
 	 * @param ctx the parse tree
 	 */
-	void enterForConditions(diorParser.ForConditionsContext ctx);
+	void enterEndloop(diorParser.EndloopContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link diorParser#forConditions}.
+	 * Exit a parse tree produced by {@link diorParser#endloop}.
 	 * @param ctx the parse tree
 	 */
-	void exitForConditions(diorParser.ForConditionsContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link diorParser#varRef}.
-	 * @param ctx the parse tree
-	 */
-	void enterVarRef(diorParser.VarRefContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link diorParser#varRef}.
-	 * @param ctx the parse tree
-	 */
-	void exitVarRef(diorParser.VarRefContext ctx);
+	void exitEndloop(diorParser.EndloopContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link diorParser#assignment}.
 	 * @param ctx the parse tree
@@ -128,15 +108,15 @@ public interface diorListener extends ParseTreeListener {
 	 */
 	void exitAddExpression(diorParser.AddExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link diorParser#compareExpression}.
+	 * Enter a parse tree produced by {@link diorParser#conditionalStatements}.
 	 * @param ctx the parse tree
 	 */
-	void enterCompareExpression(diorParser.CompareExpressionContext ctx);
+	void enterConditionalStatements(diorParser.ConditionalStatementsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link diorParser#compareExpression}.
+	 * Exit a parse tree produced by {@link diorParser#conditionalStatements}.
 	 * @param ctx the parse tree
 	 */
-	void exitCompareExpression(diorParser.CompareExpressionContext ctx);
+	void exitConditionalStatements(diorParser.ConditionalStatementsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link diorParser#unaryExpression}.
 	 * @param ctx the parse tree
@@ -157,14 +137,4 @@ public interface diorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPrintOut(diorParser.PrintOutContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link diorParser#maths}.
-	 * @param ctx the parse tree
-	 */
-	void enterMaths(diorParser.MathsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link diorParser#maths}.
-	 * @param ctx the parse tree
-	 */
-	void exitMaths(diorParser.MathsContext ctx);
 }

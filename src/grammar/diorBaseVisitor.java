@@ -1,4 +1,4 @@
-// Generated from C:/Users/vikto/Documents/GitHub/Language/src/grammar\dior.g4 by ANTLR 4.8
+// Generated from C:/Users/Lucas/Documents/GitHub/Language/src/grammar\dior.g4 by ANTLR 4.8
 package grammar;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
@@ -31,13 +31,6 @@ public class diorBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements d
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitBlock(diorParser.BlockContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitStatement(diorParser.StatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -52,28 +45,21 @@ public class diorBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements d
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitWhileStatment(diorParser.WhileStatmentContext ctx) { return visitChildren(ctx); }
+	@Override public T visitLoop(diorParser.LoopContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitForStatement(diorParser.ForStatementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitHeadloop(diorParser.HeadloopContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitForConditions(diorParser.ForConditionsContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitVarRef(diorParser.VarRefContext ctx) { return visitChildren(ctx); }
+	@Override public T visitEndloop(diorParser.EndloopContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -101,7 +87,7 @@ public class diorBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements d
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCompareExpression(diorParser.CompareExpressionContext ctx) { return visitChildren(ctx); }
+	@Override public T visitConditionalStatements(diorParser.ConditionalStatementsContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -116,11 +102,4 @@ public class diorBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements d
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitPrintOut(diorParser.PrintOutContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitMaths(diorParser.MathsContext ctx) { return visitChildren(ctx); }
 }
