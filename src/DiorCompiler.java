@@ -53,20 +53,22 @@ public class DiorCompiler extends diorBaseListener {
 
     @Override
     public void exitLoop(diorParser.LoopContext ctx) {
-        System.out.println("goto enterloop1");
-        System.out.println("label exitloop1");
+        System.out.println("goto loop");
+        System.out.println("label end");
+        this.out.append("goto loop" + "\n");
+        this.out.append("label end" + "\n");
     }
 
     @Override
     public void enterHeadloop(diorParser.HeadloopContext ctx) {
-        System.out.println("label enterHeadloop1");
+        System.out.println("label loop");
+        this.out.append("label loop" + "\n");
     }
 
     @Override
     public void exitHeadloop(diorParser.HeadloopContext ctx) {
-        System.out.println("lt");
-        System.out.println("not");
-        System.out.println("if-goto exitloop1");
+        System.out.println("lt\n" + "not\n" + "if-goto " + "end");
+        this.out.append("lt\n" + "not\n" + "if-goto" + "end" + "\n");
     }
 
     @Override
